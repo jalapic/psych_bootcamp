@@ -77,22 +77,25 @@ mod1$coefficients
 # therefore:   y' = 125.96 + -9.84x
 
 
-## Just a small technical detail.....
-# these regression coefficients are 'estimates'
-# we are trying to estimate the 'parameters' that are true for a population
-
 
 
 
 ### OK.  These are just estimates... Are they any good ?
-
-
 
 summary(mod1)
 
 
 # Finally, we have a confidence interval around 'b'
 confint(object = mod1, level = .95)
+
+
+## Some diagnostic plots
+
+plot(mod1)
+
+qqnorm(resid(mod1))
+qqline(resid(mod1)) 
+
 
 
 # In brief:
@@ -117,7 +120,7 @@ confint(object = mod1, level = .95)
 
 
 
-##### Try for yourself examples --------------------------
+### Example 2:
 
 
 ## read in the data BlueJays.csv
@@ -140,16 +143,11 @@ mod
 
 
 # get the estimates and other linear model output summary:
-
 summary(mod)
 
-# what is the R2?
-# what is the standard error of the estimate?
-# what are the degrees of freedom?
-# Is the model a good fit?
-
-# is the slope significantly different from 0 ?
-
-# get the confidence intervals for the slope b?
-
+# get the confidence intervals for the slope b
 confint(mod)
+
+
+
+

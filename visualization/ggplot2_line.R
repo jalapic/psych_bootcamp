@@ -90,36 +90,17 @@ ggplot(jenlinda, aes(x=year, y=n, color=name)) +
   ggtitle("Popularity of Names Jennifer & Linda in USA")
 
 
-####################----------------------------##########################
 
+#### Example 2
 
-### Try for yourself examples....
-
-# remove the blanks, and replace with the appropriate word.
-
-# 1. Import the texascovid dataset. This gives the cumulative number of deaths from covid19 for all of Texas (as of June 6th). The day column is the number of days since March 4th 2020.
-
-# you may get a 'warning' about the Date column - it's ok.
-
-covid.df <- read_csv("data/texascovid.csv")
-
-head(covid.df)
-tail(covid.df)
-
-# plot a line graph of day (x-axis) against total (y-axis)
-
-ggplot(covid.df, aes(x= day, y= total)) + geom_line()
-
-
-# 2. Import the countycovid dataset.
 
 covid.county <- read_csv("data/countycovid.csv")
 
 head(covid.county)
 tail(covid.county)
 
-# plot a line graph of day (x-axis) against total (y-axis), and make separate lines for each county.
 
+# plot a line graph of date (x-axis) against total (y-axis), and make separate lines for each county.
 
-ggplot(covid.county, aes(x= day, y= total, color = county)) + 
+ggplot(covid.county, aes(x= date, y= value, color = county)) + 
   geom_line() 

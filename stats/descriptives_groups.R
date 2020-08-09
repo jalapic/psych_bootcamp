@@ -105,48 +105,4 @@ wheels %>%
 
 
 
-################-------------------------#########################
 
-
-### Try for yourself examples...
-
-#### Fill in the blanks ....
-
-
-# Read in the bmi data
-bmi <- read_csv("data/bmi.csv")
-
-bmi
-
-# 1. Use 'describeBy' to get summary descriptives for the bmi data according to the grouping variable 'educ'.
-
-describeBy(bmi, group="educ")
-
-
-# 2. Use 'group_by" and "summarise_if" to calculate the means of all numerical columns in the bmi dataset by education level.
-
-bmi %>%
-  group_by(educ) %>%
-  summarise_if(is.numeric, mean, na.rm = TRUE) %>%
-  as.data.frame()
-
-
-
-# 3.  Load in the pga dataset
-# this contains data on golf stats of PGA players 2004-2015
-
-pga <- read_csv("data/pga.csv")
-
-head(pga)
-
-# Use 'group_by' and 'summarise' to calculate the mean driving average (driveavg) and the standard deviation of driving average for each year (year).
-
-
-pga %>%
-  group_by(year) %>%
-  summarise(mx = mean(driveavg, na.rm=T),
-            sdx = sd(driveavg, na.rm=T)
-            ) %>%
-  as.data.frame()
-
-  

@@ -63,37 +63,4 @@ ggplot(df, aes(x=Mass, y=Head) ) +
 
 
 
-####################----------------------------##########################
-
-
-### Try for yourself examples....
-
-# remove the blanks, and replace with the appropriate word.
-
-# 1. For the films data, plot imdb against rottentomatoes and add an x-axis title, y-axis title and main title.  You can choose what to put in the titles.
-
-films <- read_csv("data/films.csv")
-
-ggplot(films, aes(x = imdb, y = rottentomatoes)) +
-  geom_point()+
-  xlab("IMDB Rating")+
-  ylab("Rotten Tomatoes Rating")+
-  ggtitle("Comparison of Rating Sites for Selected Films")
-
-# 2. For the films data, plot imdb against metacritic and add an x-axis title, y-axis title and main title.  You can choose what to put in the titles.
-
-head(films)
-
-ggplot(films, aes(x = imdb, y = metacritic)) +
-  geom_point()+
-  xlab("IMDB Rating")+
-  ylab("Metacritic Rating")+
-  ggtitle("Rating Comparison for Films")
-
-
-# 3. Change the theme of the following scatterplot to the Classic theme. (There is no blank here - you have to add something).
-
-ggplot(films, aes(x=imdb, y=metacritic))+
-  geom_point() +
-  theme_classic()
 

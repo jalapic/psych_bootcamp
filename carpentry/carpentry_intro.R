@@ -178,48 +178,4 @@ cats1 %>% filter(breed == "balinese" | breed == "angora")  # | means 'or'
 
 
 
-################   Try these examples, fill in the blank ------
-
-### Import the bloodwork dataset
-
-blood <- read_csv("data/bloodwork.csv")
-blood
-
-# 1. Filter to only keep rows where smoker is equal to 'yes'
-
-blood %>% filter(smoker ==  "yes")
-
-
-# 2. Filter to only keep rows where children is equal to 0
-
-blood %>% filter(children == 0)
-
-
-# 3. Filter to only keep rows where bpsyst is greater than 115 and hrate is greater than 70.
-
-blood %>% filter(bpsyst > 115, hrate > 70)
-
-
-# 4. Select the columns ids, age, smoker, hrate and arrange by hrate (descending order)
-
-blood %>%
-  select(ids, age, smoker, hrate) %>%
-  arrange(-hrate)
-
-
-# 5. Select the columns ids, state, immuncount, immuncount2, then create a new column called "tot_immun", that is the sum of 'immuncount' and 'immuncount2' 
-
-blood %>%
-  select(ids, state, immuncount, immuncount2) %>%
-  mutate(tot_immun = immuncount + immuncount2)
-
-
-
-# 6. Filter to only include rows that have the state as "NJ" or "NY".
-
-blood %>% filter(state == "NJ"  |  state == "NY")
-
-
-
-
 

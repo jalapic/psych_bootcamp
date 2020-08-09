@@ -79,26 +79,3 @@ ggplot(covid.county, aes(x=day, y=total, color=county)) +
 
 
 
-
-####################----------------------------##########################
-
-
-### Try for yourself examples....
-
-# remove the blanks, and replace with the appropriate word.
-
-# 1. For the cheese dataset, change the color of the points using a hexcode of your choice.
-
-ggplot(cheese, aes(x=sat_fat, y=chol) ) + geom_point(color = ______)
-
-
-
-# 2. For the penguins dataset, plot culmen_length_mm against culmen_depth_mm and color points by species 
-# Pick your own colors
-
-ggplot(penguins, aes(x = culmen_length_mm, y = culmen_depth_mm, color = species) ) +
-  geom_point() + 
-  scale_color_manual(values = c(____,  ____, ______))
-
-
-

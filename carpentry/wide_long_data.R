@@ -125,36 +125,3 @@ wheeldf.long %>% pivot_wider(
 
 
 
-### Try for yourself example
-
-# 1. Load the data "lifexp.csv"
-# this show life expectancy, population size and gdp for many countries over two time points
-
-df1 <- read_csv("data/lifeexp.csv")
-
-# we only need these columns
-df1 <- df1 %>% select(country, continent, year, lifeExp)
-df1
-
-# make this data wide format putting lifeExp into two separate columns based on the 'year' column.
-
-df1 %>% pivot_wider(
-  names_from = year,
-  values_from = lifeExp
-)
-
-
-## 2. Load the dataset "hurricanes.csv"
-# this shows the number of hurricanes in each of the last 5 decades in 4 states
-# it's in wide format
-
-hu <- read_csv("data/hurricanes.csv")
-hu
-
-# make this dataset into long format, calling the decade column 'decade', 
-
-hu %>% 
-  pivot_longer(
-    cols = 2:6, 
-    names_to="decade")  
-

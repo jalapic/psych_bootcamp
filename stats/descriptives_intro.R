@@ -128,40 +128,4 @@ describe(xt)
 
 
 
-################----------------------#############################
-
-### Try for yourself examples.  
-
-# Most are free form, except one fill in the blank....
-# Copy and Paste and Modify from above 
-
-
-#1. Calculate the IQR for time3 of the xt data
-
-
-#2. Calculate the standard deviation for kcal from the cheese data
-
-
-
-# Load in the "bmi.csv" dataset
-# this gives various health measurements of 20 subjects
-# but it contains missing data
-
-bmi <- read_csv("data/bmi.csv")
-
-head(bmi)
-tail(bmi)
-
-#3. Make a boxplot of the bmi column.
-
-ggplot(______, aes(y=______)) + 
-  geom_boxplot(color='black', fill='lightseagreen') + 
-  scale_x_discrete(breaks = NULL)
-
-
-
-# 4. Use 'mean()' and 'sd()' functions to calculate the mean and standard deviation of the bmi column.
-
-
-# 5. Use either 'summary()' or 'describe()' from the Psych package to get an overall summary of the bmi dataset.
 

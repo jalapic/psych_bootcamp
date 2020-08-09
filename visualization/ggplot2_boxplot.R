@@ -4,8 +4,6 @@
 library(tidyverse)
 
 
-### Example 1...
-
 
 # import and look at data
 
@@ -125,113 +123,6 @@ ggplot(wheels, aes(x = strain, y = total, fill = strain)) +
 ggplot(wheels, aes(x = strain, y = total, fill = strain)) + 
   geom_boxplot() +
   geom_jitter(width=.1)
-
-
-
-
-#### Quick Second Example..
-
-## Import the bloodwork dataset
-
-bloodwork <- read_csv("data/bloodwork.csv")
-head(bloodwork)
-tail(bloodwork)
-
-# Let's make a boxplot looking at 'state' on the x-axis and 'immuncount' on the y-axis
-
-ggplot(bloodwork, aes(x = state, y = immuncount)) + geom_boxplot()
-
-
-# add color based on state
-ggplot(bloodwork, aes(x = state, y = immuncount, fill = state)) + geom_boxplot()
-
-# add some points over the top
-ggplot(bloodwork, aes(x = state, y = immuncount, fill = state)) + 
-  geom_boxplot() +
-  geom_point()
-
-# or to make more wobbly
-ggplot(bloodwork, aes(x = state, y = immuncount, fill = state)) + 
-  geom_boxplot() +
-  geom_jitter(width=.1)
-
-
-# Did you notice something about the outliers ???
-
-
-# to remove outliers do the following.
-ggplot(bloodwork, aes(x = state, y = immuncount, fill = state)) + 
-  geom_boxplot(outlier.shape=NA) 
-
-
-# So now there is the correct number of points...
-ggplot(bloodwork, aes(x = state, y = immuncount, fill = state)) + 
-  geom_boxplot(outlier.shape=NA) +
-  geom_jitter(width=.1)
-
-# entering a number gives you different shapes
-ggplot(bloodwork, aes(x = state, y = immuncount, fill = state)) + 
-  geom_boxplot(outlier.shape=4) 
-
-
-
-
-
-####################----------------------------##########################
-
-
-### Try for yourself examples....
-
-# remove the blanks, and replace with the appropriate word.
-
-
-## Example 1.
-
-# import the BlueJays dataset.
-# make a boxplot of "KnownSex" on the x-axis and "Mass" on the y-axis.
-
-BlueJays <- read_csv("data/BlueJays.csv")
-head(BlueJays)
-tail(BlueJays)
-
-ggplot(BlueJays, aes(x= KnownSex, y = Mass)) + geom_boxplot()
-
-
-# now customzie the fill and color of the boxplot. Choose your own colors
-
-ggplot(BlueJays, aes(x= KnownSex, y = Mass)) + 
-  geom_boxplot(fill="mistyrose", color="purple")
-
-
-# now make the fill of the boxplots different dependent on KnownSex
-
-ggplot(BlueJays, aes(x= KnownSex, y = Mass, fill = KnownSex) ) + 
-  geom_boxplot()
-
-
-    
-## Example 2.
-
-#import the MetroCommutes dataset
-metro <- read_csv("data/MetroCommutes.csv")
-head(metro)
-tail(metro)
-table(metro$City)
-
-# make a boxplot of City on the x-axis and Time on the y-axis. 
-
-
-ggplot(metro,  aes(x=City, y= Time)) + geom_boxplot() 
-
-
-# make the same plot, but this time flip the x and y axes.
-
-ggplot(metro,  aes(x=City, y= Time)) + geom_boxplot()  + coord_flip()
-
-
-# keep the same plot, but this time instead of a boxplot do a violin plot
-
-ggplot(metro,  aes(x=City, y= Time)) + geom_violin()  + coord_flip()
 
 
 
